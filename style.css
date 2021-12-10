@@ -1,3 +1,8 @@
+
+.but
+{
+    visibility: hidden;
+}
 body
 {
     text-align: center;
