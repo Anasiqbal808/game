@@ -19,8 +19,11 @@ $(document).ready(function(){
     }
 
     getName();
-            
 
+    $(".openKeyboard").on("click", ()=>{
+        navigator.virtualKeyboard.show();
+    })
+    
     $(".lvlNo").html(level);
 
     $("html").keypress(function(event){
