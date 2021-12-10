@@ -14,11 +14,17 @@ $(document).ready(function(){
               console.log(data.results[0].name.first);
               $(".name").html("<h1 class='name'>"+currentName+"</h1>");
               console.log(currentName)
+              $(".but").trigger("tap"); //jQuery Mobile
             }
+
         });
     }
 
     getName();
+
+    $(".but").on("click", ()=>{
+        alert("SDfdfsdf")
+    })
 
     $(".openKeyboard").on("click", ()=>{
         navigator.virtualKeyboard.show();
