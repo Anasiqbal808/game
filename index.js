@@ -10,6 +10,22 @@ $(document).ready(function(){
             url: 'https://randomuser.me/api/',
             dataType: 'json',
             success: function(data) {
+                // for(let i=0; i<data.results[0].name.first.toLowerCase().length; i++){
+                //     var test = 0;
+                //     for(let j=0; j<26; j++){
+                //         console.log("Name we get: "+data.results[0].name.first.toLowerCase()[i])
+                //         if(data.results[0].name.first.toLowerCase()[i]==alpha){
+                //             test=1;
+                //         }
+                //         else{
+                //             test=0;
+                //         }
+                //         console.log('test value: '+test)
+                //     }
+                //     if(test==0){
+                //         // getName();
+                //     }
+                // }
                 currentName=data.results[0].name.first.toLowerCase();
               console.log(data.results[0].name.first);
               $(".name").html("<h1 class='name'>"+currentName+"</h1>");
@@ -21,6 +37,32 @@ $(document).ready(function(){
     }
 
     getName();
+
+
+
+
+
+
+    var time = 5;
+
+    // function timer(){
+
+    // }
+
+    setInterval(()=>{
+        time=time-1;
+        if(time<0){
+            time=0;
+        }
+        else if(time==0){
+            getName();
+            time=5;
+        }
+        $(".timer").html(time);
+    }, 1000)
+
+
+
 
     $(".but").on("click", ()=>{
         alert("SDfdfsdf")
@@ -44,6 +86,7 @@ $(document).ready(function(){
                 getName();
                 userInput=[]
                 level=level+1
+                time=5
                 $(".lvlNo").html(level);
              
             }
@@ -54,7 +97,7 @@ $(document).ready(function(){
             }
             else{
                 $("body").css("backgroundColor", "red");
-                level=0
+                // level=0
                 $(".lvlNo").html(level);
                 if(userInput.length>0){
                     userInput=[];
