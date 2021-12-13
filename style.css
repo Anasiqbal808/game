@@ -30,3 +30,9 @@ body
     padding: 10px 0;
     border-radius: 10px;
 }
+.times
+{
+    text-align: left;
+    padding: 30px 70px;
+    font-weight: 900;
+}
